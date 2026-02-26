@@ -1,12 +1,15 @@
 import sqlite3 from 'sqlite3'
 import { open } from 'sqlite'
 import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { vinyl } from './data.js'
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+
 async function seedTable() {
- 
+
   const db = await open({
-    filename: path.join('database.db'),
+    filename: path.resolve(__dirname, 'database.db'),
     driver: sqlite3.Database
   })
 
@@ -20,7 +23,7 @@ async function seedTable() {
         INSERT INTO products (title, artist, price, image, year, genre, stock)
         VALUES (?, ?, ?, ?, ?, ?, ?)`,
         [title, artist, price, image, year, genre, stock]
-        )
+      )
 
     }
 
@@ -36,7 +39,7 @@ async function seedTable() {
 
     await db.close()
     console.log('Database connection closed.')
-    
+
   }
 }
 

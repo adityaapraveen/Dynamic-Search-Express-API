@@ -1,11 +1,14 @@
 import sqlite3 from 'sqlite3'
 import { open } from 'sqlite'
 import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 async function createTable() {
 
       const db = await open({
-            filename: path.join('database.db'),
+            filename: path.resolve(__dirname, 'database.db'),
             driver: sqlite3.Database
       })
 
