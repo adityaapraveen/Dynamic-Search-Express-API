@@ -1,4 +1,4 @@
-# Dynamic Product Search API
+# Dynamic Product Search EXPRESS API
 
 A backend REST API for a classic vinyl record store, featuring live search and genre filtering powered by a SQLite database. Built and deployed as a full-stack Node.js project.
 
