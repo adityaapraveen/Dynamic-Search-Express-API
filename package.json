@@ -8,7 +8,7 @@
         "build": "node createTable.js && node seedTable.js",
         "start": "node server.js"
     },
-    "author": "Tom Chant",
+    "author": "Aditya Praveen",
     "license": "ISC",
     "dependencies": {
         "express": "^4.21.2",
